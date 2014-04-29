@@ -33,9 +33,9 @@ my_event.fire(1);
 
 Functions that take the same arguments and return void may be bound to the 
 Event. A bound function will automatically be unbound when the bind (
-std::shared_ptr<Event<???>::Bind>) falls out of scope. Binds can safely outlive
-the respective Event. Alternativley a function can be permanently bound using
-the Event::permanent_bind method.
+std::shared_ptr&lt;Event&lt;Args...&gt;::Bind&gt;) falls out of scope. Binds
+can safely outlive the respective Event. Alternatively a function can be
+permanently bound using the Event::permanent_bind method.
 ```cpp
 Event<int> my_event;
 {
@@ -62,7 +62,8 @@ permanent: 0
 permanent: 1
 ````
 
-It is also safe to bind and unbind in a function that is bound to an Event:
+It is also safe to bind and unbind in a function that is bound to an Event,
+even while that Event is firing:
 ```cpp
 std::shared_ptr<Event<>::Bind> bind = 0;
 Event<> my_event;
