@@ -27,7 +27,7 @@ THE SOFTWARE.
 // standard library
 #include <assert.h>
 #include <cstdlib>
-// estd
+// event
 #include "event.hpp"
 
 static void test_basic_operations();
